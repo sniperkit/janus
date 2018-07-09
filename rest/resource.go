@@ -24,16 +24,16 @@ func (r *Resource) GetEndPoints(rootPath string) ([]*Endpoint, error) {
 	resourcePath := filepath.Join(rootPath, r.Name)
 
 	if !fileExist(resourcePath) {
-		return nil, fmt.Errorf("Unable to find resource folder %s", r.Name)
+		return nil, fmt.Errorf("Unable to find resource folder %s, rootPath=%s", r.Name, rootPath)
 	}
 
 	endpoints := []*Endpoint{
-		&Endpoint{URL: "/" + r.Name, Method: "GET", Handler: r.getHandle(filepath.Join(resourcePath, "index.json"), 200)},
-		&Endpoint{URL: "/" + r.Name, Method: "POST", Handler: r.getHandle(filepath.Join(resourcePath, "post.json"), 201)},
-		&Endpoint{URL: "/" + r.Name + "/{item}", Method: "GET", Handler: r.getDynamicHandle(resourcePath, 200)},
-		&Endpoint{URL: "/" + r.Name + "/{item}", Method: "PUT", Handler: r.getDynamicHandle(resourcePath, 200)},
-		&Endpoint{URL: "/" + r.Name + "/{item}", Method: "PATCH", Handler: r.getDynamicHandle(resourcePath, 200)},
-		&Endpoint{URL: "/" + r.Name + "/{item}", Method: "DELETE", Handler: r.getDynamicHandle(resourcePath, 200)},
+		{URL: "/" + r.Name, Method: "GET", Handler: r.getHandle(filepath.Join(resourcePath, "index.json"), 200)},
+		{URL: "/" + r.Name, Method: "POST", Handler: r.getHandle(filepath.Join(resourcePath, "post.json"), 201)},
+		{URL: "/" + r.Name + "/{item}", Method: "GET", Handler: r.getDynamicHandle(resourcePath, 200)},
+		{URL: "/" + r.Name + "/{item}", Method: "PUT", Handler: r.getDynamicHandle(resourcePath, 200)},
+		{URL: "/" + r.Name + "/{item}", Method: "PATCH", Handler: r.getDynamicHandle(resourcePath, 200)},
+		{URL: "/" + r.Name + "/{item}", Method: "DELETE", Handler: r.getDynamicHandle(resourcePath, 200)},
 	}
 	return endpoints, nil
 }

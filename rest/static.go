@@ -16,7 +16,7 @@ func (s *Static) GetEndPoint(rootPath string) (*Endpoint, error) {
 	resourcePath := filepath.Join(rootPath, s.Path)
 
 	if !fileExist(resourcePath) {
-		return nil, fmt.Errorf("Unable to find static folder %s", resourcePath)
+		return nil, fmt.Errorf("Unable to find static folder %s, s.Path=%s, rootPath=%s", resourcePath, s.Path, rootPath)
 	}
 
 	if !strings.HasPrefix(s.URL, "/") {

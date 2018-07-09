@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/jijeshmohan/janus/rest"
+	"github.com/sniperkit/janus/rest"
 )
 
 // corsHandler middleare to handle cors.

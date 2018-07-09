@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/jijeshmohan/janus/rest"
+	"github.com/sniperkit/janus/rest"
 )
 
 // Config type represent configuration json.

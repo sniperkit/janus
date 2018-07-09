@@ -5,8 +5,8 @@ import (
 	"sort"
 
 	"github.com/gorilla/mux"
-	"github.com/jijeshmohan/janus/config"
-	"github.com/jijeshmohan/janus/rest"
+	"github.com/sniperkit/janus/config"
+	"github.com/sniperkit/janus/rest"
 )
 
 // router type is for generating routes from the configuration.

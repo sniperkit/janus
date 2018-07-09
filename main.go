@@ -6,8 +6,8 @@ import (
 	"os/signal"
 	"path/filepath"
 
-	"github.com/jijeshmohan/janus/config"
-	"github.com/jijeshmohan/janus/server"
+	"github.com/sniperkit/janus/config"
+	"github.com/sniperkit/janus/server"
 )
 
 func main() {

@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/jijeshmohan/janus/config"
+	"github.com/sniperkit/janus/config"
 )
 
 type app struct {
